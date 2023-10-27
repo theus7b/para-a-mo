@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        #message {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5em;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45A049;
+        }
+
+        #flower {
+            display: none;
+            margin-top: 20px;
+            background-color: #ffe6ea;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #flower img {
+            max-width: 150px;
+        }
+
+        #flower-text {
+            font-size: 1.2em;
+            margin: 20px;
+        }
+
+        #emoji {
+            display: none;
+            margin-top: 20px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você aceita meu presente?</h1>
+    <div id="message">Escolha uma opção:</div>
+    <button class="button" onclick="aceitarPresente(true)">Sim</button>
+    <button class="button" onclick="aceitarPresente(false)">Não</button>
+    <div id="flower">
+        <img src="flor pixel.png" alt="Flor Pixel Art">
+        <div id="flower-text">Desculpa por nunca ter te dado uma flor, mas a primeira pode ser por códigos? TE AMO</div>
+    </div>
+    <div id="emoji">Que pena :(</div>
+
+    <script>
+        function aceitarPresente(aceitou) {
+            document.getElementById("message").style.display = "none";
+            document.querySelectorAll(".button").forEach(function (button) {
+                button.style.display = "none";
+            });
+
+            if (aceitou) {
+                document.getElementById("flower").style.display = "block";
+            } else {
+                document.getElementById("emoji").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+
